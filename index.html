@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+        }
+
+        #screen {
+            margin: auto;
+
+            .row {
+                display: flex;
+            }
+
+            .pixel {
+                width: 12px;
+                height: 12px;
+                /*border: 1px solid darkcyan;*/
+            }
+
+            .on {
+                background-color: aqua;
+            }
+
+            .off {
+                background-color: black;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="screen"></div>
+<script type="module" src="./src/index.ts"></script>
+</body>
+</html>

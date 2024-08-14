@@ -380,7 +380,7 @@ export class CPU {
         this.I = 0
         this.registers = new Uint8Array(16)
         this.stack = new Uint16Array(16)
-        this.SP = -1
+        this.SP = 0
         this.delay = 0
         this.sound = 0
         this.key = Array(16).fill(0)

@@ -120,10 +120,12 @@ const Instructions = {
                 const screenPixel = cpu.screen.screen[yPos + row][xPos + col]
 
                 if (spritePixel) {
-                    if (screenPixel.classList.contains('on')) {
+                    const v = screenPixel.classList.contains('on') ? 0 : 1
+
+                    if (!v) {
                         cpu.registers[0xf] = 1
                     }
-                    cpu.screen.update(yPos + row, xPos + col, 1)
+                    cpu.screen.update(yPos + row, xPos + col, v)
                 }
             }
         }
@@ -509,6 +511,7 @@ export class Screen {
     update(x: number, y: number, value: number) {
         const pixelEl = this.screen[x][y]
 
+        pixelEl.classList.remove('on', 'off')
         pixelEl.classList.add(value ? 'on' : 'off')
     }
 }
